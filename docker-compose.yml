@@ -1,5 +1,7 @@
 services:
   db:
+    build: 
+      context: ./df_data
     image: mysql:5.7
     restart: always
     environment:
