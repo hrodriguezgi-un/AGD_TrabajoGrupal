@@ -1,0 +1,22 @@
+[2021-04-18 17:55:50.769] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-04-18 17:55:50.769] [remoteagent] [info] Extension host agent started.
+[2021-04-18 17:55:50.861] [remoteagent] [info] [::ffff:127.0.0.1][e2f3440e][ExtensionHostConnection] New connection established.
+[2021-04-18 17:55:50.868] [remoteagent] [info] [::ffff:127.0.0.1][e2f3440e][ExtensionHostConnection] <274> Launched Extension Host Process.
+[2021-04-18 17:55:50.886] [remoteagent] [info] [::ffff:127.0.0.1][80fb1474][ManagementConnection] New connection established.
+[2021-04-18 17:55:51.552] [remoteagent] [info] Installing extension: cweijan.vscode-mysql-client2
+[2021-04-18 17:55:51.596] [remoteagent] [info] Downloaded extension: cweijan.vscode-mysql-client2 undefined
+[2021-04-18 17:55:54.839] [remoteagent] [info] Extracted extension to /root/.vscode-server/extensions/.6125e5ee-aa0e-4d9a-a3a7-1c44b7895d67: cweijan.vscode-mysql-client2
+[2021-04-18 17:55:54.853] [remoteagent] [info] Renamed to /root/.vscode-server/extensions/cweijan.vscode-mysql-client2-3.6.8
+[2021-04-18 17:55:54.858] [remoteagent] [info] Installation completed. cweijan.vscode-mysql-client2
+[2021-04-18 17:55:54.863] [remoteagent] [info] Extensions installed successfully: cweijan.vscode-mysql-client2
+[2021-04-18 18:04:41.554] [remoteagent] [info] [::ffff:127.0.0.1][80fb1474][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-04-18 18:04:42.621] [remoteagent] [info] [::ffff:127.0.0.1][e2f3440e][ExtensionHostConnection] <274> Extension Host Process exited with code: 0, signal: null.

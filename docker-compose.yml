@@ -13,3 +13,5 @@ services:
       - '3306'
     volumes:
       - ./df_data:/var/lib/mysql
+      - ./df_files:/var/lib/mysql-files
+      - ./scripts:/root
