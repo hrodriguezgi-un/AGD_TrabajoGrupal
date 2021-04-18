@@ -1,0 +1,6 @@
+.DS_Store*
+.vscode*
+df_data/*
+scripts/.vscode*
+scripts/.mysql*
+scripts/.bash*
