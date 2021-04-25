@@ -1,4 +1,4 @@
-DROP DATABASE hospitalizacion;
+DROP DATABASE IF EXISTS hospitalizacion;
 
 CREATE DATABASE hospitalizacion CHARACTER SET utf8;
 
@@ -30,7 +30,7 @@ CREATE TABLE `causa_externa` (
 
 -- hospitalizacion.diagnostico definition
 CREATE TABLE `diagnostico` (
-  `cod` int(4) NOT NULL,
+  `cod` varchar(4) NOT NULL,
   `diagnostico` varchar(100) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -38,16 +38,16 @@ CREATE TABLE `diagnostico` (
 
 -- hospitalizacion.eas definition
 CREATE TABLE `eas` (
-  `cod` int(4) NOT NULL,
-  `nombre_eas` varchar(100) NOT NULL,
+  `cod` varchar(6) NOT NULL,
+  `nombre_eas` varchar(200) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 -- hospitalizacion.ips definition
 CREATE TABLE `ips` (
-  `cod` int(4) NOT NULL,
-  `nombre_ips` varchar(100) NOT NULL,
+  `cod` int(12) NOT NULL,
+  `nombre_ips` varchar(500) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -72,18 +72,18 @@ CREATE TABLE `tipo_usuario` (
 CREATE TABLE `atencion` (
   `consecutivo` int(4) NOT NULL,
   `anio` int(4) NOT NULL,
-  `cod_eas` int(4) NOT NULL,
+  `cod_eas` varchar(6) NOT NULL,
   `cod_tipo_usuario` int(4) NOT NULL,
-  `cod_ips` int(4) NOT NULL,
+  `cod_ips` bigint NOT NULL,
   `cod_municipio` int(4) NOT NULL,
   `cod_departamento` int(4) NOT NULL,
   `cod_causa_externa` int(4) NOT NULL,
-  `cod_dx_ppal_externo` int(4) NOT NULL,
+  `cod_dx_ppal_externo` varchar(4) NOT NULL,
   `cod_tipo_edad` int(4) NOT NULL,
   `edad` int(4) NOT NULL,
   `sexo` varchar(2) NOT NULL,
   `zona` varchar(2) NOT NULL,
-  `servicio` varchar(2) NOT NULL,
+  `servicio` varchar(20) NOT NULL,
   `total_atenciones` int(4) NOT NULL,
   PRIMARY KEY (`consecutivo`),
   KEY `atencion_eas_FK` (`cod_eas`),

@@ -1,6 +1,8 @@
 .DS_Store*
 .vscode*
-df_data/*
+df_data/*.frm
+df_data/*.ibd
+df_data/ib_logfile*
 scripts/.vscode*
 scripts/.mysql*
 scripts/.bash*
