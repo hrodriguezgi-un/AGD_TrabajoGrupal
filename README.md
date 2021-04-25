@@ -2,6 +2,9 @@
 
 Este repositorio está diseñado con el fin de repasar conceptos sobre base de datos, modelo entidad-relación y otros aspectos del manejo de datos. Para llevar a cabo estas actividades se ha definido utilizar una base de datos MySQL desplegada sobre Docker, para optimizar recursos de las máquinas. A continuación se indica el proceso para dejar funcional la base de datos y comenzar a hacer consultas.
 
+## Fuente de datos utilizada para este ejercicio
+El archivo utilizado como fuente de información es [*atenciones en hospitalización*](http://medata.gov.co/dataset/atenciones-en-hospitalizaci%C3%B3n/resource/4c727683-5bf6-4f30-adf7-35b66ba54c26#{view-graph:{graphOptions:{hooks:{processOffset:{},bindEvents:{}}}},graphOptions:{hooks:{processOffset:{},bindEvents:{}}}}), el cual cuenta con la información desde el 2009 hasta el 2017 de las hospitalizaciones realizadas en el departamento de Antioquia.
+
 ## Manual para el inicio de la instancia de docker MySQL 5.7
 En la raíz del repositorio se encuentra un archivo llamado *docker-compose.yml*:
 
