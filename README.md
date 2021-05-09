@@ -8,7 +8,7 @@ El archivo utilizado como fuente de información es [*atenciones en hospitalizac
 ## Manual para el inicio de la instancia de docker MySQL 5.7
 En la raíz del repositorio se encuentra un archivo llamado *docker-compose.yml*:
 
-![github](resources/github.png)
+![github](images/github.png)
 
 El cual cuenta con la siguiente información: 
 * Versión de base de datos a utilizar: MySQL 5.7
@@ -18,19 +18,19 @@ El cual cuenta con la siguiente información:
 * En la sección de *expose*, le estamos indicando al contenedor que utilizaremos ese puerto desde nuestra máquina física para acceder al contenedor. Esto con ayuda del software DBeaver o MySQL Workbench.
 * En la sección de *volumes*, le estamos indicando que tome 3 carpetas de nuestra máquina física para que sean mapeadas en el contenedor
 
-![docker-compose.yml](resources/docker_compose.png)
+![docker-compose.yml](images/docker_compose.png)
 
 Para iniciar el contenedor, deberemos abrir la terminal de nuestro sistema operativo o desde el propio visual studio code, como se puede ver en la siguiente imagen y dirigirnos a la carpeta donde se encuentra el repositorio:
 
-![terminal](resources/folder.png)
+![terminal](images/folder.png)
 
 El comando a ejecutar será **docker-compose up -d**, de esta forma nuestro equipo buscará inicialmente de forma local si contamos con una imagen de docker MySQL 5.7, y de no encontrarla se dirigirá a los repositorios de Internet para descargarla y poder iniciarla:
 
-![downloading](resources/downloading.png)
+![downloading](images/downloading.png)
 
 Una vez finalizada la descarga, docker iniciará el contenedor:
 
-![deployed](resources/installed.png)
+![deployed](images/installed.png)
 
 
 ## Pasos iniciales para acceder a la base de datos desde la máquina virtual
@@ -41,34 +41,34 @@ Antes de poder utilizar la base de datos por medio del software DBeaver o MySQL 
     * **docker ps** para obtener el ID del contenedor al que nos vamos a conectar
     * **docker exec -it *ID_Obtenido* /bin/bash** para acceder al contenedor
 
-![consola](resources/consola.png)
+![consola](images/consola.png)
 
 2. Dirigirnos a la carpeta de */root* y ejecutar el script de *init_db.sh*
 
-![initialize](resources/initialize.png)
+![initialize](images/initialize.png)
 
 ## Conexión a la base de datos
 
 Una vez completados los pasos anteriores podemos abrir el programa que hemos descargado para acceder a la base de datos. En este caso utilizaremos [dbeaver](https://dbeaver.io/):
 
-![dbeaver](resources/dbeaver.png)
+![dbeaver](images/dbeaver.png)
 
 Una vez abierto el programa procederemos a crear una nueva conexión de base de datos de tipo MySQL:
 
-![new connection](resources/new_connection.png)
+![new connection](images/new_connection.png)
 
 Completaremos los datos que nos pide el programa y daremos click sobre el botón de *Test Connection*::
 
-![mysql](resources/mysql.png)
+![mysql](images/mysql.png)
 
 Si nos pide descargar un driver daremos click que OK, y al final deberemos obtener que se ha conectado correctamente:
 
-![connected](resources/connected.png)
+![connected](images/connected.png)
 
 Por último podremos ver que nuestra base de datos se encuentra en la parte izquierda y podemos desplegar lo que se encuentra en ella (tablas)
 
-![database](resources/database.png)
+![database](images/database.png)
 
 Incluso si damos doble click sobre el nombre de la base de datos, podemos ver el esquema ER de la misma:
 
-![database_er](resources/database_er.png)
+![database_er](images/database_er.png)

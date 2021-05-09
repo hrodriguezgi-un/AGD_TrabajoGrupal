@@ -1,7 +1,5 @@
 services:
-  db:
-    build: 
-      context: ./df_data
+  agd_database:
     image: mysql:5.7
     restart: always
     environment:
@@ -14,6 +12,6 @@ services:
     expose:
       - '3306'
     volumes:
-      - ./df_data:/var/lib/mysql
-      - ./df_files:/var/lib/mysql-files
-      - ./scripts:/root
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./scripts/T1.3.2.Creacion_Tablas.sql:/docker-entrypoint-initdb.d/2.sql
+      - ./scripts/T1.3.3.Insertar_Datos.sql:/docker-entrypoint-initdb.d/3.sql
