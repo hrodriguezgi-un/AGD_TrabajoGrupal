@@ -1,8 +1,10 @@
 .DS_Store*
 .vscode*
-df_data/*.frm
-df_data/*.ibd
-df_data/ib_logfile*
 scripts/.vscode*
 scripts/.mysql*
 scripts/.bash*
+
+# ignore all mysql files
+df_data/*
+# except this file
+!/df_data/.dont_delete_me

@@ -20,3 +20,12 @@ cd
 ls
 mysql -p < hospitalizacion.sql 
 mysql -p < load_data.sql 
+pwd
+ls
+cd 
+ls
+cd /var/lib/
+ls
+cd mysql-files/
+ls
+exit
