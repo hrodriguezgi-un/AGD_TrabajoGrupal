@@ -14,7 +14,7 @@ CREATE TABLE `departamentos` (
 
 -- hospitalizacion.municipios definition
 CREATE TABLE `municipios` (
-  `cod` varchar(4) NOT NULL,
+  `cod` varchar(6) NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -31,7 +31,7 @@ CREATE TABLE `causa_externa` (
 -- hospitalizacion.diagnostico definition
 CREATE TABLE `diagnostico` (
   `cod` varchar(4) NOT NULL,
-  `diagnostico` varchar(100) NOT NULL,
+  `diagnostico` varchar(500) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
