@@ -6,7 +6,7 @@ USE hospitalizacion;
 
 -- hospitalizacion.departamentos definition
 CREATE TABLE `departamentos` (
-  `cod` int(4) NOT NULL,
+  `cod` varchar(3) NOT NULL,
   `departamento` varchar(100) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -14,7 +14,7 @@ CREATE TABLE `departamentos` (
 
 -- hospitalizacion.municipios definition
 CREATE TABLE `municipios` (
-  `cod` int(4) NOT NULL,
+  `cod` varchar(4) NOT NULL,
   `municipio` varchar(50) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -46,7 +46,7 @@ CREATE TABLE `eas` (
 
 -- hospitalizacion.ips definition
 CREATE TABLE `ips` (
-  `cod` int(12) NOT NULL,
+  `cod` varchar(12) NOT NULL,
   `nombre_ips` varchar(500) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -92,14 +92,14 @@ CREATE TABLE `atencion` (
   KEY `atencion_municipios_FK` (`cod_municipio`),
   KEY `atencion_departamentos_FK` (`cod_departamento`),
   KEY `atencion_causa_externa_FK` (`cod_causa_externa`),
-  KEY `atencion_diagnostico_FK` (`cod_dx_ppal_externo`),
+  KEY `atencion_diagnostico_FK` (`cod_dx_ppal_egreso`),
   KEY `atencion_tipo_edad_FK` (`cod_tipo_edad`),
-  CONSTRAINT `atencion_causa_externa_FK` FOREIGN KEY (`cod_causa_externa`) REFERENCES `causa_externa` (`cod`),
-  CONSTRAINT `atencion_diagnostico_FK` FOREIGN KEY (`cod_dx_ppal_externo`) REFERENCES `diagnostico` (`cod`),
   CONSTRAINT `atencion_eas_FK` FOREIGN KEY (`cod_eas`) REFERENCES `eas` (`cod`),
+  CONSTRAINT `atencion_tipo_usuario_FK` FOREIGN KEY (`cod_tipo_usuario`) REFERENCES `tipo_usuario` (`cod`),
   CONSTRAINT `atencion_ips_FK` FOREIGN KEY (`cod_ips`) REFERENCES `ips` (`cod`),
   CONSTRAINT `atencion_municipios_FK` FOREIGN KEY (`cod_municipio`) REFERENCES `municipios` (`cod`),
   CONSTRAINT `atencion_departamentos_FK` FOREIGN KEY (`cod_departamento`) REFERENCES `departamentos` (`cod`),
-  CONSTRAINT `atencion_tipo_edad_FK` FOREIGN KEY (`cod_tipo_edad`) REFERENCES `tipo_edad` (`cod`),
-  CONSTRAINT `atencion_tipo_usuario_FK` FOREIGN KEY (`cod_tipo_usuario`) REFERENCES `tipo_usuario` (`cod`)
+  CONSTRAINT `atencion_causa_externa_FK` FOREIGN KEY (`cod_causa_externa`) REFERENCES `causa_externa` (`cod`),
+  CONSTRAINT `atencion_diagnostico_FK` FOREIGN KEY (`cod_dx_ppal_egreso`) REFERENCES `diagnostico` (`cod`),
+  CONSTRAINT `atencion_tipo_edad_FK` FOREIGN KEY (`cod_tipo_edad`) REFERENCES `tipo_edad` (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
