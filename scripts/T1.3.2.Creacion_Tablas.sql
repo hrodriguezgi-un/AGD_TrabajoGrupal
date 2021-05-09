@@ -75,7 +75,7 @@ CREATE TABLE `atencion` (
   `cod_eas` varchar(6) NOT NULL,
   `cod_tipo_usuario` int(4) NOT NULL,
   `cod_ips` varchar(12) NOT NULL,
-  `cod_municipio` varchar(4) NOT NULL,
+  `cod_municipio` varchar(6) NOT NULL,
   `cod_departamento` varchar(3) NOT NULL,
   `cod_causa_externa` int(4) NOT NULL,
   `cod_dx_ppal_egreso` varchar(4) NOT NULL,

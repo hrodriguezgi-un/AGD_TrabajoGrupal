@@ -1,6 +1,7 @@
 services:
   agd_database:
     image: mysql:5.7
+    command: --max_allowed_packet=30M
     restart: always
     environment:
       MYSQL_DATABASE: 'hospitalizacion'
