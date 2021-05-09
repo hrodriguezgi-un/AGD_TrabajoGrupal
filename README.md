@@ -3,7 +3,7 @@
 Este repositorio está diseñado con el fin de repasar conceptos sobre base de datos, modelo entidad-relación y otros aspectos del manejo de datos. Para llevar a cabo estas actividades se ha definido utilizar una base de datos MySQL desplegada sobre Docker, para optimizar recursos de las máquinas. A continuación se indica el proceso para dejar funcional la base de datos y comenzar a hacer consultas.
 
 ## Fuente de datos utilizada para este ejercicio
-El archivo utilizado como fuente de información es [*atenciones en hospitalización*](http://medata.gov.co/dataset/atenciones-en-hospitalizaci%C3%B3n/resource/4c727683-5bf6-4f30-adf7-35b66ba54c26#{view-graph:{graphOptions:{hooks:{processOffset:{},bindEvents:{}}}},graphOptions:{hooks:{processOffset:{},bindEvents:{}}}}), el cual cuenta con la información desde el 2009 hasta el 2017 de las hospitalizaciones realizadas en el departamento de Antioquia.
+El archivo utilizado como fuente de información es [*atenciones en hospitalización*](http://medata.gov.co/dataset/atenciones-en-hospitalizaci%C3%B3n/resource/4c727683-5bf6-4f30-adf7-35b66ba54c26#{view-graph:{graphOptions:{hooks:{processOffset:{},bindEvents:{}}}},graphOptions:{hooks:{processOffset:{},bindEvents:{}}}}), el cual cuenta con la información desde el 2009 hasta el 2017 de las hospitalizaciones realizadas en el departamento de Antioquia. Sin embargo para la realización del presente ejercicio solo se han tomado los datos de los últimos 3 años.
 
 ## Manual para el inicio de la instancia de docker MySQL 5.7
 En la raíz del repositorio se encuentra un archivo llamado *docker-compose.yml*:
@@ -11,12 +11,12 @@ En la raíz del repositorio se encuentra un archivo llamado *docker-compose.yml*
 ![github](images/github.png)
 
 El cual cuenta con la siguiente información: 
-* Versión de base de datos a utilizar: MySQL 5.7
-* Base de datos: hospitalizacion
-* Usuario: *user*
-* Contraseña del usuario y del usuario root
-* En la sección de *expose*, le estamos indicando al contenedor que utilizaremos ese puerto desde nuestra máquina física para acceder al contenedor. Esto con ayuda del software DBeaver o MySQL Workbench.
-* En la sección de *volumes*, le estamos indicando que tome 3 carpetas de nuestra máquina física para que sean mapeadas en el contenedor
+- ***Versión de base de datos a utilizar:*** MySQL 5.7
+- ***Base de datos:*** hospitalizacion
+- ***Usuario:*** *user*
+- ***Contraseña del usuario y del usuario root***
+- ***expose***: puerto para ser utilizado desde nuetra máquina física
+- ***volumes:*** scripts de inicialización de la base de datos y de la carga de información
 
 ![docker-compose.yml](images/docker_compose.png)
 
@@ -32,20 +32,6 @@ Una vez finalizada la descarga, docker iniciará el contenedor:
 
 ![deployed](images/installed.png)
 
-
-## Pasos iniciales para acceder a la base de datos desde la máquina virtual
-
-Antes de poder utilizar la base de datos por medio del software DBeaver o MySQL Workbench, debemos realizar unos pasos iniciales.
-
-1. Ingresar al contenedor. Para esto ejecutaremos dos comandos:
-    * **docker ps** para obtener el ID del contenedor al que nos vamos a conectar
-    * **docker exec -it *ID_Obtenido* /bin/bash** para acceder al contenedor
-
-![consola](images/consola.png)
-
-2. Dirigirnos a la carpeta de */root* y ejecutar el script de *init_db.sh*
-
-![initialize](images/initialize.png)
 
 ## Conexión a la base de datos
 

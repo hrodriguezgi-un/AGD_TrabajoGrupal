@@ -3,8 +3,3 @@
 scripts/.vscode*
 scripts/.mysql*
 scripts/.bash*
-
-# ignore all mysql files
-df_data/*
-# except this file
-!/df_data/.dont_delete_me
