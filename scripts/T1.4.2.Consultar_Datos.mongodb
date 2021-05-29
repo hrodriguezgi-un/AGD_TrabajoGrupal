@@ -1,0 +1,23 @@
+use('hospitalizacion');
+
+// Documentos asociados a la IPS: 'FUNDACION HOSPITALARIA SAN VICENTE DE PAUL'
+db.atenciones.find( {ips: {$eq: 'FUNDACION HOSPITALARIA SAN VICENTE DE PAUL'} } );
+
+// Documentos asociados al DX: 'BRONQUITIS AGUDA NO ESPECIFICADA'
+db.atenciones.find( {dx_ppal_egreso: { $eq: 'BRONQUITIS AGUDA NO ESPECIFICADA' } } );
+
+
+// Cantidad de Atenciones asociadas a BRONQUIOLITIS AGUDA NO ESPECIFICADA
+// Agrupadas por IPS y Sexo del paciente
+const aggregation = [
+  { $match: { dx_ppal_egreso: { $eq: 'BRONQUIOLITIS AGUDA NO ESPECIFICADA' } } },
+  { $group: { _id: ['$ips', '$sexo'], atenciones: { $sum: '$total_atenciones' } } } 
+];
+db.atenciones.aggregate(aggregation);
+
+// Cantidad de Atenciones por Hombre y Mujer menores o iguales a 20 años
+const aggregation1 = [
+  { $match: { tipo_edad: { $eq: 'ANIOS' }, edad: { $lte: 20 } } },
+  { $group: { _id: '$sexo', atenciones: { $sum: '$total_atenciones' } } } 
+];
+db.atenciones.aggregate(aggregation1);
